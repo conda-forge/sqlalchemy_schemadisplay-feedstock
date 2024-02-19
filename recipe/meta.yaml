@@ -19,7 +19,7 @@ requirements:
     - pip
     - python >=3.8
     - setuptools
-    - flit_core >=3.4,<4
+    - flit-core >=3.4,<4
   run:
     - pydot
     - python >=3.8
