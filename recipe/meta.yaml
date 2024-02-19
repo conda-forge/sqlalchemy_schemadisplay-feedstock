@@ -24,6 +24,7 @@ requirements:
     - pydot
     - python >=3.8
     - sqlalchemy >=2.0,<3
+    - pillow
 
 test:
   imports:
