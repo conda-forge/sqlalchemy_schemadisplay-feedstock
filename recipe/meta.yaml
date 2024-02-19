@@ -17,12 +17,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
     - setuptools
+    - flit_core >=3.4,<4
   run:
     - pydot
-    - python >=3.6
-    - sqlalchemy
+    - python >=3.8
+    - sqlalchemy >=2.0,<3
 
 test:
   imports:
