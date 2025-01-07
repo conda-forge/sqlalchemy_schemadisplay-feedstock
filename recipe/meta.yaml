@@ -6,25 +6,27 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0a9f26d77be9d92c9564d87cc17668fe141a816036c5f5d7c8cb053b253957e0
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
     - setuptools
   run:
     - pydot
-    - python
+    - python >={{ python_min }}
     - sqlalchemy
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - sqlalchemy_schemadisplay
 
